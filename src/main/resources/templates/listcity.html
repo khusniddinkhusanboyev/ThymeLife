@@ -1,29 +1,40 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>listcity</title>
+    <!-- Imported data from Bootstrap -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous">
+    <title>Spring Boot Thymeleaf HTML table</title>
 </head>
 <body>
-<div>
-    <h2>list city</h2>
+<!-- Apply Bootstrap CSS styles -->
+<div class="container">
+    <h3>City - Details</h3>
     <hr>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>CountryCode</th>
-                <th>District</th>
-                <th>Population</th>
-            </tr>
+    <!-- Create table applying Bootstrap CSS styles -->
+    <table class="table table-bordered table-striped">
+        <!-- Table header -->
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>CountryCode</th>
+            <th>District</th>
+            <th>Population</th>
+        </tr>
         </thead>
         <tbody>
-        <tr th:each="city: ${list-cities}">
-            <td th:text="${city.id}">
-            <td th:text="${city.name}">
-            <td th:text="${city.countrycode}">
-            <td th:text="${city.district}">
-            <td th:text="${city.population}">
-            </td>
+       <tr th:each="city:${cities}">
+            <td th:text="${city.id}">id</td>
+            <td th:text="${city.name}">name</td>
+            <td th:text="${city.countrycode}">countrycode</td>
+            <td th:text="${city.district}">district</td>
+            <td th:text="${city.population}">population</td>
         </tr>
         </tbody>
     </table>

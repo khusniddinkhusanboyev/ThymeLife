@@ -19,4 +19,10 @@ public class CityService {
     public List<City> getAll(){
        return cityrepository.findAll();
     }
+
+    public City save(City city){
+        return cityrepository.save(city);
+    }
+
+
 }
